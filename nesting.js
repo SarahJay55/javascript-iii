@@ -38,7 +38,16 @@ var employees = [{
 
 // Code here
 
-
+function employeeUpdater () {
+  for (var i = 0; i < employees.length; i++) {
+    if (employees[i]["firstName"] === "Theo") {
+      employees.splice(i, 1);
+    } else if (employees[i]["firstName"] === "Lorie") {
+      employees[i].department = "HR";
+    }
+  }
+  return employees;
+}
 
 
 
@@ -55,6 +64,23 @@ var employees = [{
 var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 // Code here
+
+function removeDuplicates () {
+  var newArr = [];
+  var flag;
+  for (var i = 0; i < workplaceAccidents.length; i++) {
+    flag = true;
+    for (var j = 0; j < newArr.length; j++) {
+      if (workplaceAccidents[i] === newArr[j]) {
+        flag = false;
+      }
+    }
+    if (flag){
+      newArr.push(workplaceAccidents[i])
+    }
+  } 
+  return newArr;
+}
 
 
 
